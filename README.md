@@ -1,9 +1,9 @@
-# PM Chat
+# PM Chat — complete starter
 
-The menu language can be selected on the first screen and changed later from the header. Included menu languages: Persian, English, Turkish, Azerbaijani, Arabic, Russian, French, Spanish, German, Chinese, Hindi, Portuguese, Japanese, and Italian. Chat messages are not automatically translated.
+Black/green private chat app with account registration/login, searchable users, 14 menu-language choices, private text messages, image/video stories that expire after 24 hours, story deletion, and recorded voice messages.
 
-## Deploy to Render
-Upload `main.py`, `requirements.txt`, `render.yaml`, and `README.md` to a GitHub repository. In Render choose **New +** → **Blueprint**, connect GitHub, select the repository, then review and apply.
+## Deploy on Render
+Upload all four files to the root of your GitHub repository. In Render, use New + → Blueprint and select the repository (or update your existing web service).
 
 ## Important
-SQLite is used by default. On hosting with an ephemeral filesystem, accounts/messages can be lost after restarts or redeploys. Configure persistent storage or managed PostgreSQL for reliable persistence. Do not publish real secrets. This is a basic starter app and needs moderation and stronger production controls before broad public use.
+This starter stores data in SQLite, including uploaded story/voice media as data URLs. On hosts with ephemeral storage, data can be lost on restart/redeploy. For a real public app, migrate to managed PostgreSQL plus persistent object storage, add moderation/reporting, limits and backups. Voice recording requires microphone permission and HTTPS. Stories are removed when the API is accessed after their 24-hour expiry.
